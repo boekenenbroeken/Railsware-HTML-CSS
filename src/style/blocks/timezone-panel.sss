@@ -1,0 +1,71 @@
+.timezone-section
+  padding-bottom: 40px
+  margin-top: 40px
+
+.timezones-dropdown
+  position: relative
+  display: inline-block
+  cursor: pointer
+
+  @media screen and (width <= 1040px)
+    text-align: center
+
+.timezones-dropdown__list
+  position: absolute
+  right: 0
+  left: -99999999px
+  width: 90%
+  padding: 7px 0
+  margin: 3px auto 0
+  background-color: var(--background-white)
+  border: 1px solid var(--black-200)
+  border-radius: 6px
+  box-shadow: 0 1px 6px var(--black-200)
+
+.timezones-dropdown__item
+  display: flex
+  align-items: center
+  width: 100%
+  padding: 7px 10px
+  font-size: 14px
+  cursor: pointer
+  outline: none
+  transition: background-color 0.2s ease
+
+  @media screen and (width <= 350px)
+    font-size: 12px
+
+  &-selected
+    position: relative
+    border-radius: 18px
+
+  &-name
+    padding: 0 10px
+
+  &-icon
+    display: inline-block
+    height: 14px
+    vertical-align: middle
+
+  &:hover,
+  &:focus
+    background-color: var(--text-grey-100)
+
+.timezones-dropdown__checkbox
+  position: absolute
+  left: 0
+  width: 100%
+  height: 100%
+  opacity: 0
+
+  &:checked
+    ~ .timezones-dropdown__list
+      left: 0
+
+    + .timezones-dropdown__item-selected
+      .icon-caret-down
+        transform: rotate(180deg)
+
+  &:focus + .timezones-dropdown__item-selected,
+  &:hover + .timezones-dropdown__item-selected
+    background: var(--black-100)

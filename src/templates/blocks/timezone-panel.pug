@@ -1,0 +1,16 @@
+section(class="timezone-section")
+  div(class="timezones-dropdown")
+    input(type="checkbox" id="timezones-dropdown" 
+      class="timezones-dropdown__checkbox"
+    )
+    label(for="timezones-dropdown" 
+      class="timezones-dropdown__item timezones-dropdown__item-selected"
+    )
+      i(class="icon-globe timezones-dropdown__item-icon") 
+      span(class="timezones-dropdown__item-name") #{data.currentTimezone}
+      i(class="icon-caret-down timezones-dropdown__item-icon")
+
+    ul(class="timezones-dropdown__list")
+      each timeZone in data.timezones_list
+        li
+          button(class="timezones-dropdown__item")= timeZone

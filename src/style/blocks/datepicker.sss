@@ -1,0 +1,114 @@
+.datepicker
+  padding: 0 19px
+
+  @media screen and (width <= 1040px)
+    padding: 0 30px
+    margin: 0 auto
+
+  @media screen and (width <= 410px)
+    padding: 0 10px
+
+.datepicker__header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding-left: 10px
+  margin-bottom: 15px
+
+  @media screen and (width <= 540px)
+    padding-left: 0
+
+.datepicker__date
+  @media screen and (width <= 1040px)
+    margin-left: 4px
+
+.datepicker__arrows
+  button
+    width: 38px
+    height: 38px
+    margin-left: 10px
+    font-size: 20px
+    color: var(--blue-basic)
+    cursor: pointer
+    background: transparent
+    border-radius: 50%
+    outline: none
+    transition: width 0.2s ease, background-color 0.2s ease
+
+    &:disabled
+      color: var(--text-grey-600)
+      pointer-events: none
+
+    &:hover,
+    &:focus
+      background-color: var(--blue-150)
+
+.datepicker__week
+  display: grid
+  grid-template-columns: repeat(7, 1fr)
+  grid-auto-flow: dense
+  grid-gap: 7px 10px
+
+  @media screen and (width <= 370px)
+    grid-gap: 5px 2px
+
+.datepicker__day-name
+  padding-bottom: 15px
+  font-size: 12px
+  font-weight: 400
+  line-height: 1
+  text-align: center
+  text-transform: uppercase
+
+.datepicker__day-cell
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 44px
+  height: 44px
+  font-size: 16px
+  color: var(--text-grey-600)
+  text-align: center
+  cursor: pointer
+  background-color: transparent
+  border: 1px solid transparent
+  border-radius: 50%
+  outline: none
+  transition: background-color 0.2s ease
+
+  @media screen and (width <= 540px)
+    width: 30px
+    height: 30px
+    font-size: 14px
+
+  &.is-disabled
+    pointer-events: none
+
+  &.is-available
+    font-weight: bold
+    color: var(--blue-basic)
+    background-color: var(--blue-50)
+
+  &.is-picked
+    color: var(--text-white)
+    background-color: var(--blue-basic)
+
+  &.is-today
+    position: relative
+
+    &::after
+      position: absolute
+      right: 0
+      bottom: 0
+      left: 0
+      font-size: 14px
+      content: '\2022'
+
+      @media screen and (width <= 540px)
+        bottom: -1px
+        font-size: 10px
+
+  &:hover,
+  &:focus
+    &:not(.is-picked)
+      background-color: var(--blue-150)

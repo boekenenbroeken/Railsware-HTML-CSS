@@ -1,0 +1,101 @@
+.timespots
+  display: flex
+  flex-direction: column
+  min-width: 270px
+  min-height: 510px
+  outline: none
+
+  @media screen and (width <= 1040px)
+    min-height: 300px
+
+  @media screen and (width <= 810px)
+    width: 100%
+
+  &.is-hidden
+    display: none
+
+.timespots__title
+  margin-bottom: 10px
+  line-height: 38px
+
+  @media screen and (width <= 810px)
+    text-align: center
+
+.timespots__list
+  flex: 1 1 100px
+  padding-right: 40px
+  overflow-x: hidden
+  overflow-y: auto
+
+  @media screen and (width <= 810px)
+    padding: 0 30px
+
+  @media screen and (width <= 410px)
+    padding: 0 10px
+
+.timespots__item
+  position: relative
+  display: flex
+  justify-content: space-between
+  max-width: 230px
+  margin-bottom: 10px
+
+  @media screen and (width <= 810px)
+    width: 60%
+    max-width: none
+    margin: 0 auto 10px
+
+  @media screen and (width >= 540px)
+    width: 382px
+
+  @media screen and (width <= 540px)
+    width: 100%
+    max-width: 344px
+
+  .timespots__button
+    height: 52px
+    font-size: 16px
+    font-weight: bold
+    line-height: 30px
+    cursor: pointer
+    border-radius: 4px
+    outline: none
+    transition: width 0.2s ease
+
+    @media screen and (width <= 810px)
+      font-size: 14px
+
+  .timespots__button-time
+    display: block
+    width: 100%
+    color: var(--blue-basic)
+    background: var(--background-white)
+    border: 1px solid var(--blue-500)
+
+    &:hover,
+    &:focus
+      border-color: var(--blue-basic)
+      border-width: 2px
+
+  .timespots__button-confirm
+    width: 0
+    visibility: hidden
+
+  &.is-picked
+    .timespots__button
+      width: 48.5%
+      color: var(--text-white)
+      border-width: 2px
+
+    .timespots__button-time
+      pointer-events: none
+      background-color: var(--black-600)
+      border-color: transparent
+
+    .timespots__button-confirm
+      visibility: visible
+      background-color: var(--blue-basic)
+
+      &:hover,
+      &:focus
+        background-color: var(--blue-500)

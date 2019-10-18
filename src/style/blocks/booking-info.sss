@@ -1,0 +1,54 @@
+.booking-sidebar
+  width: 100%
+  max-width: 350px
+  padding: 25px 30px
+  margin-right: 10px
+  background-color: var(--background-white)
+  border: 1px solid var(--text-grey-100)
+  border-radius: 8px
+  box-shadow: 0 1px 8px 0 var(--black-80)
+
+  @media screen and (width <= 1040px)
+    width: 90%
+    max-width: none
+    padding: 25px 0 50px
+    margin: 0 0 10px 0
+    text-align: center
+
+  @media screen and (width <= 370px)
+    width: 95%
+
+  &__invitee
+    margin: 20px 0 7px
+    font-weight: bold
+    color: var(--text-grey-600)
+
+  &__meeting
+    margin-bottom: 12px
+    font-size: 32px
+    font-weight: bold
+
+  &__logo
+    width: 70px
+
+  &__details
+    color: var(--text-grey-600)
+
+    @media screen and (width <= 1040px)
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-top: 25px
+
+  &__block
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+
+  &__icon
+    margin-right: 10px
+    font-size: 20px
+
+  &__description
+    margin-top: 20px
+    font-size: 16px

@@ -1,0 +1,19 @@
+section(class="booking-sidebar")
+  picture
+    source(type="image/webp" srcset="/images/websummit-logo.webp")
+    source(type="image/png" srcset="/images/websummit-logo.png")
+    img(src="/images/websummit-logo.png" alt="invitee-logo" 
+      class="booking-sidebar__logo"
+    )
+
+  h4(class="booking-sidebar__invitee") #{data.invitee}
+  h1(class="booking-sidebar__meeting") #{data.meeting_name}
+
+  div(class="booking-sidebar__details")
+    div(class="booking-sidebar__block")
+      i(class="booking-sidebar__icon icon-clock2")
+      p #{data.meeting_interval}
+    div(class="booking-sidebar__block")
+      i(class="booking-sidebar__icon icon-location")
+      p #{data.location}
+    h5(class="booking-sidebar__description") #{data.description}

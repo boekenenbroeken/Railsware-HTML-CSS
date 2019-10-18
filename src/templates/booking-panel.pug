@@ -1,0 +1,10 @@
+main(class="booking-panel")
+
+  include blocks/booking-info.pug
+
+  section(class="booking-container")
+    h2(class="booking-title") #{data.booking_title}
+    div(class="booking-content")
+
+      include blocks/datepicker.pug
+      include blocks/timespot-picker.pug

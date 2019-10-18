@@ -1,0 +1,11 @@
+section(class="timespots is-hidden"
+  tabindex="0"
+)
+  div(class="timespots__title")
+    span #{data.pickedDayOfWeek},&nbsp;
+    span #{data.pickedMonth}
+  div(class="timespots__list")
+    each timeSpot in data.time_spots
+      div(class="timespots__item is-available")
+        button(class="timespots__button timespots__button-time")= timeSpot
+        button(class="timespots__button timespots__button-confirm") #{data.confirm_btn}

@@ -1,0 +1,63 @@
+{
+  "name": "railsware-test-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "parcel serve src/index.pug --open 'google chrome'",
+    "lint": "eslint . && stylelint src/**/*.sss",
+    "test": "npm run lint",
+    "build": "parcel build src/index.pug"
+  },
+  "keywords": [],
+  "author": "@almost_bergman",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.6.4",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.8",
+    "lint": "^0.7.0",
+    "postcss": "^7.0.18",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-media-minmax": "^4.0.0",
+    "postcss-nested": "^4.1.2",
+    "precss": "^4.0.0",
+    "pug": "^2.0.4",
+    "stylelint": "^11.0.0",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "sugarss": "^2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-airbnb-base",
+    "rules": {
+      "no-undef": "off"
+    }
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "dist"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recess-order"
+    ],
+    "rules": {
+      "declaration-block-trailing-semicolon": null,
+      "block-closing-brace-newline-before": null,
+      "block-opening-brace-space-before": null
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title #{data.project_title}
+    meta(name="description" content="HTML/CSS test task for Railsware")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="icon" href="/images/favicon.png" type="image/png")
+    link(rel="shortcut icon" href="/favicon.ico")
+    link(rel="stylesheet", href="/style.sss")
+
+  body
+    div(class="layout")
+      include templates/booking-panel.pug
+    
+    script(src="/index.js")

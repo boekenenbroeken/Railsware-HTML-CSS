@@ -1,0 +1,23 @@
+section(class="datepicker")
+  div(class="datepicker__header")
+    div(class="datepicker__date") 
+       span(class="datepicker__month") #{data.currentMonth}&nbsp;
+       span(class="datepicker__year") #{data.currentYear}
+    div(class="datepicker__arrows")
+      button(class="icon-angle-left" disabled)
+      button(class="icon-angle-right")
+
+  div(class="datepicker__week")
+    each dayName in data.days_of_week
+      div(class="datepicker__day-name")= dayName
+
+  div(class="datepicker__week")
+    each val, index in data.calendar_days
+      button(class="datepicker__day-cell " + 
+        (val.isToday ? "is-today " : "") + 
+        (val.isAvailable ? "is-available" : "is-disabled")
+        disabled=(!val.isAvailable)
+      )= index
+        
+
+  include ./timezone-panel.pug
