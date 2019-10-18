@@ -4,8 +4,12 @@ section(class="datepicker")
        span(class="datepicker__month") #{data.currentMonth}&nbsp;
        span(class="datepicker__year") #{data.currentYear}
     div(class="datepicker__arrows")
-      button(class="icon-angle-left" disabled)
-      button(class="icon-angle-right")
+      button(class="icon-angle-left" type="button"
+        name="arrow-previous-month" disabled
+      )
+      button(class="icon-angle-right" type="button"
+        name="arrow-next-month"
+      )
 
   div(class="datepicker__week")
     each dayName in data.days_of_week
@@ -17,6 +21,7 @@ section(class="datepicker")
         (val.isToday ? "is-today " : "") + 
         (val.isAvailable ? "is-available" : "is-disabled")
         disabled=(!val.isAvailable)
+        type="button" name="day-of-month"
       )= index
         
 

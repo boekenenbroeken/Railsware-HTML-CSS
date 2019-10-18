@@ -7,5 +7,9 @@ section(class="timespots is-hidden"
   div(class="timespots__list")
     each timeSpot in data.time_spots
       div(class="timespots__item is-available")
-        button(class="timespots__button timespots__button-time")= timeSpot
-        button(class="timespots__button timespots__button-confirm") #{data.confirm_btn}
+        button(class="timespots__button timespots__button-time"
+          type="button" name="time-spot"
+        )= timeSpot
+        button(class="timespots__button timespots__button-confirm"
+          type="button" name="confirm"
+        ) #{data.confirm_btn}
