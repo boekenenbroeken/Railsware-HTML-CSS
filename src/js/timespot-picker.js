@@ -10,6 +10,7 @@ function pickTimeSpot() {
   if (this.classList.contains('is-picked')) return;
 
   this.classList.add('is-picked');
+  this.querySelector('.timespots__button-confirm').focus();
 }
 
 availableTimeSpots.forEach((timeSpot) => {
